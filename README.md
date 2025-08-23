@@ -1,5 +1,5 @@
 
-![Logo](https://imgur.com/gallery/play-frostsurvival-tech-QBtf1Cs)
+![Logo](https://imgur.com/a/H9cv6ma)
 
 
 # Frost Network
