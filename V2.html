@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CrystalMC – Premium Minecraft Network</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Base Styles */
+      :root {
+        --bg-dark: #0b1229;
+        --bg-mid: #192a4d;
+        --primary: #5ab1ff;
+        --highlight: #a24ae8;
+        --white: #f2f6ff;
+        --muted: #cbd7ff;
+        --btn-dark: #162a55;
+        --btn-hover: #2a4a8d;
+        --card-bg: #1f365f;
+        --card-border: #3a5a9a;
+        --shadow-glow: rgba(90, 177, 255, 0.3);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
+        color: var(--white);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 3rem;
+        background: rgba(11, 18, 41, 0.75);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 2px 18px rgba(14, 28, 63, 0.5);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--primary);
+        text-shadow: 0 0 10px var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      nav {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .nav-btn {
+        background: var(--btn-dark);
+        padding: 0.65rem 1.4rem;
+        border-radius: 999px;
+        border: 1.5px solid transparent;
+        font-weight: 600;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      .nav-btn:hover {
+        background: var(--btn-hover);
+        border-color: var(--primary);
+        box-shadow: 0 0 12px var(--primary);
+        transform: scale(1.05);
+      }
+
+      .hero {
+        text-align: center;
+        padding: 6rem 1rem 4rem;
+        position: relative;
+        max-width: 720px;
+        margin: auto;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, var(--primary), transparent 70%);
+        filter: blur(120px);
+        transform: translate(-50%, -50%);
+        opacity: 0.3;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      .hero img {
+        height: 110px;
+        margin-bottom: 1.25rem;
+        filter: drop-shadow(0 0 8px var(--primary));
+      }
+
+      .hero h1 {
+        font-size: 3.75rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 10px var(--primary);
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        max-width: 620px;
+        margin: 0 auto 2.5rem;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75rem 1.8rem;
+        background: var(--btn-dark);
+        color: var(--white);
+        border-radius: 999px;
+        font-weight: 600;
+        border: 1.5px solid transparent;
+        transition: 0.3s;
+        gap: 0.6rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .badge:hover {
+        background: var(--btn-hover);
+        border-color: var(--primary);
+        box-shadow: 0 0 14px var(--primary);
+        transform: scale(1.05);
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 4rem 1rem;
+        text-align: center;
+      }
+
+      .section h2 {
+        font-size: 2.75rem;
+        color: var(--primary);
+        margin-bottom: 2.25rem;
+        text-shadow: 0 0 6px var(--primary);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1.5px solid var(--card-border);
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: left;
+        transition: 0.3s;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px var(--shadow-glow);
+      }
+
+      .card-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+        display: inline-block;
+      }
+
+      .card h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.5;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      .partner-card {
+        background: linear-gradient(135deg, #5c3cc4, #a24ae8);
+        color: #fff;
+        border: none;
+        box-shadow: 0 6px 24px rgba(162, 74, 232, 0.4);
+      }
+
+      .partner-card .card-icon {
+        color: #fff;
+      }
+
+      footer {
+        padding: 2rem 1rem;
+        text-align: center;
+        font-size: 0.95rem;
+        color: var(--muted);
+        opacity: 0.6;
+      }
+
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        .hero p {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo"><i class="fas fa-gem"></i> CrystalMC</div>
+      <nav>
+        <div class="nav-btn"><i class="fas fa-vote-yea"></i> Vote</div>
+        <div class="nav-btn"><i class="fab fa-discord"></i> Discord</div>
+        <div class="nav-btn"><i class="fas fa-info-circle"></i> Info</div>
+        <div class="nav-btn"><i class="fas fa-handshake"></i> Partners</div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img src="https://beta.crystal-mc.xyz/favicon.png" alt="CrystalMC Logo" />
+        <h1>Welcome to CrystalMC</h1>
+        <p>
+          Discover the next generation of Minecraft gameplay with our feature-rich, community-driven network. 
+          Powered by premium tech and built for explorers, traders, and dreamers alike.
+        </p>
+        <div class="badge"><i class="fas fa-globe"></i> play.crystal-mc.xyz</div>
+        <br /><br />
+        <div class="badge"><i class="fas fa-server"></i> Powered by Fluffix</div>
+      </section>
+
+      <section class="section">
+        <h2>What Sets Us Apart</h2>
+        <div class="grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-link"></i></div>
+            <h3>Dynamic Economy</h3>
+            <p>
+              Participate in an active economy with player shops, auctions, and real trade value.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Flawless Hosting</h3>
+            <p>
+              Experience blazing fast performance and uptime thanks to our premium hosting partner, Fluffix.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-bolt"></i></div>
+            <h3>Version Support</h3>
+            <p>
+              From 1.18 to 1.21+, stay current with the latest Minecraft features and updates.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-users"></i></div>
+            <h3>Community First</h3>
+            <p>
+              Our vibrant, welcoming community is at the heart of every great build and event.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-heart"></i></div>
+            <h3>Passionate Staff</h3>
+            <p>
+              A dedicated team works around the clock to make sure your experience is always premium.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-star"></i></div>
+            <h3>Always Available</h3>
+            <p>
+              Get 24/7 support and assistance when you need it most—from real humans who care.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Our Partners</h2>
+        <div class="card partner-card">
+          <div class="card-icon"><i class="fas fa-handshake"></i></div>
+          <h3>PixelatedStory</h3>
+          <p>
+            Providing creative content and rich storytelling experiences that complement our vision.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 CrystalMC – In partnership with PixelatedStory
+    </footer>
+  </body>
+</html>

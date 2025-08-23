@@ -1,0 +1,209 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CrystalMC | Elevate Your Adventure</title>
+    <meta property="og:title" content="CrystalMC - Premium Minecraft Network">
+    <meta property="og:description" content="Modded SMP, Semi-Vanilla Survival, and more. Join a refined Minecraft experience today.">
+    <link rel="icon" href="/media/favicon.ico" type="image/png" />
+    <link href="https://fonts.bunny.net/css?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      .card {
+        @apply bg-slate-700 p-6 rounded-3xl shadow-xl border border-slate-600 transition-all transform hover:scale-[1.03] hover:shadow-blue-400/40 relative overflow-hidden;
+      }
+      .card::before {
+        content: "";
+        @apply absolute top-0 left-0 w-full h-full rounded-3xl bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 hover:opacity-10 transition-opacity duration-300;
+        z-index: 0;
+      }
+      .nav-container {
+        position: relative;
+        z-index: 50;
+        background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+      .nav-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+      }
+      .nav-logo {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: #3b82f6;
+        text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+        transition: all 0.3s ease-in-out;
+      }
+      .nav-logo:hover {
+        transform: scale(1.05);
+        text-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
+      }
+      .nav-toggle {
+        display: none;
+        cursor: pointer;
+        color: white;
+      }
+      .nav-menu {
+        display: flex;
+        gap: 1rem;
+        transition: all 0.3s ease-in-out;
+      }
+      .nav-menu a {
+        padding: 0.5rem 1.25rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        color: white;
+        background: linear-gradient(to right, #3b82f6, #2563eb);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        transition: all 0.3s ease-in-out;
+      }
+      .nav-menu a:hover {
+        background: linear-gradient(to right, #60a5fa, #3b82f6);
+        transform: scale(1.08);
+        box-shadow: 0 6px 18px rgba(96, 165, 250, 0.5);
+      }
+      @media (max-width: 768px) {
+        .nav-toggle {
+          display: block;
+        }
+        .nav-menu {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background-color: #1e293b;
+          padding: 1rem;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
+        .nav-menu.active {
+          display: flex;
+        }
+      }
+    </style>
+    <script>
+      function toggleMenu() {
+        document.querySelector('.nav-menu').classList.toggle('active');
+      }
+    </script>
+  </head>
+  <body class="bg-gradient-to-b from-slate-950 to-slate-800 text-white">
+<div class="bg-amber-500 text-black text-center py-2 font-semibold shadow flex justify-center items-center gap-4">
+  A new CrystalMC website experience is launching soon. Stay tuned!
+  <a href="https://crystal-mc.xyz/preview.html" target="_blank" rel="noopener noreferrer"
+    class="bg-green-600 hover:bg-green-700 text-white px-4 py-1.5 rounded-full font-semibold transition">
+    Preview
+  </a>
+</div>
+    <header class="nav-container">
+      <div class="nav-wrapper">
+        <a href="#" class="nav-logo">CrystalMC</a>
+        <div class="nav-toggle md:hidden" onclick="toggleMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </div>
+        <nav class="nav-menu md:flex">
+          <a href="#">Store</a>
+          <a href="#discord">Discord</a>
+          <a href="#partners">Partners</a>
+          <a href="https://www.patreon.com/c/VoidStorm">Patreon</a>
+          <a href="/login">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-center py-24 px-6">
+      <img src="/media/logo.png" alt="CrystalMC Logo" class="w-44 mx-auto mb-6 drop-shadow-lg">
+      <h1 class="text-5xl font-bold mb-4 leading-tight">Welcome to <span class="text-blue-400">CrystalMC</span></h1>
+      <p class="text-lg text-slate-300 max-w-xl mx-auto mb-10">Discover premium Minecraft gameplay with rich world generation, custom systems, and an amazing community.</p>
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+        <button onclick="copyText('PLAY.CRYSTAL-MC.XYZ')" class="bg-slate-700 p-4 rounded-full hover:scale-105 transition shadow-lg">
+          <div class="text-lg font-semibold">PLAY.CRYSTAL-MC.XYZ</div>
+          <div class="text-sm text-blue-300">1.21.4 | Paper | Survival</div>
+        </button>
+        <button onclick="copyText('MC.VOID-STORM.COM')" class="bg-slate-700 p-4 rounded-full hover:scale-105 transition shadow-lg">
+          <div class="text-lg font-semibold">MC.VOID-STORM.COM</div>
+          <div class="text-sm text-blue-300">1.16.5 | Forge | Crazy Craft</div>
+        </button>
+      </div>
+      <p id="copy-msg" class="mt-4 text-green-400 hidden">Copied to clipboard!</p>
+      <script>
+        function copyText(ip) {
+          navigator.clipboard.writeText(ip.toLowerCase());
+          const msg = document.getElementById('copy-msg');
+          msg.classList.remove('hidden');
+          setTimeout(() => msg.classList.add('hidden'), 1500);
+        }
+      </script>
+    </section>
+
+    <!-- Features -->
+    <section class="px-6 py-24 bg-slate-800 text-center">
+      <h2 class="text-3xl font-bold mb-12">What Makes Us Unique</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <div class="card">
+          <img src="/media/terralith.png" class="w-full h-36 object-cover rounded-2xl mb-4" alt="Terralith">
+          <h3 class="text-xl font-semibold">Terralith World Gen</h3>
+          <p class="text-slate-300">Experience breathtaking landscapes and enhanced terrain generation.</p>
+        </div>
+        <div class="card">
+          <img src="/media/economy.png" class="w-full h-36 object-cover rounded-2xl mb-4" alt="Economy">
+          <h3 class="text-xl font-semibold">Refined Economy</h3>
+          <p class="text-slate-300">Simplified trading system using Vault + EssentialsX for balance and fun.</p>
+        </div>
+        <div class="card">
+          <img src="/media/graves.png" class="w-full h-36 object-cover rounded-2xl mb-4" alt="Graves">
+          <h3 class="text-xl font-semibold">Death Graves</h3>
+          <p class="text-slate-300">Recover your items safely every time with automatic graves.</p>
+        </div>
+        <div class="card">
+          <img src="/media/activestaff.png" class="w-full h-36 object-cover rounded-2xl mb-4" alt="Active Staff">
+          <h3 class="text-xl font-semibold">Responsive Staff</h3>
+          <p class="text-slate-300">Friendly support team always available to assist and engage.</p>
+        </div>
+        <div class="card">
+          <img src="/media/spawnersdrop.png" class="w-full h-36 object-cover rounded-2xl mb-4" alt="Spawners">
+          <h3 class="text-xl font-semibold">Silk Spawners</h3>
+          <p class="text-slate-300">Collect and reuse mob spawners with Silk Touch enabled tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section id="partners" class="px-6 py-24 bg-slate-900 text-center">
+      <h2 class="text-3xl font-bold mb-12">Our Trusted Partners</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <div class="card">
+          <img src="/media/pixelatedstory.webp" alt="Pixelated Story" class="w-full h-36 object-cover rounded-2xl mb-4">
+          <h3 class="text-xl font-semibold">Pixelated Story</h3>
+          <p class="text-slate-300">Creative content and immersive storytelling for Minecraft fans.</p>
+          <a href="https://discord.gg/4vBZ2VqR6g" class="inline-block mt-4 px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-500 transition">Join Discord</a>
+        </div>
+        <div class="card">
+          <img src="/media/member_placeholder.webp" alt="Partner Placeholder" class="w-full h-36 object-cover rounded-2xl mb-4">
+          <h3 class="text-xl font-semibold">Your Server Here</h3>
+          <p class="text-slate-300">Become a partner and reach a wider audience. Let’s collaborate!</p>
+          <a href="#discord" class="inline-block mt-4 px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-500 transition">Get in Touch</a>
+        </div>
+        <div class="card">
+          <img src="/media/member_placeholder.webp" alt="Partner Placeholder" class="w-full h-36 object-cover rounded-2xl mb-4">
+          <h3 class="text-xl font-semibold">Coming Soon</h3>
+          <p class="text-slate-300">More collaborations and partner projects launching soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-slate-900 text-center py-6 text-sm text-slate-400">
+      &copy; 2025 CrystalMC | SuperBoopp | Powered by <a href="https://pages.github.com" class="underline">GitHub Pages</a>
+    </footer>
+  </body>
+</html>
