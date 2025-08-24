@@ -43,6 +43,7 @@ Discover everything about Frost Survival — features, updates, store, and commu
 # 🛒 Store
 
 Support the server and unlock ranks, perks, and exclusive features in our store:
+
 [![Visit Our Store](https://img.shields.io/badge/Store-FrostSurvival.tech-ffb347?style=for-the-badge&logo=buymeacoffee&logoColor=white)](https://store.frostsurvival.tech)
 
 
